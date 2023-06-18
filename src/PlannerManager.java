@@ -5,7 +5,7 @@
  * 		Date: 9/6/22
  *
  */
-import java.util.Scanner; //Imports the Scanner class
+import java.util.Scanner;
 
 public class PlannerManager {
 
