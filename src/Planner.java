@@ -124,12 +124,10 @@ public class Planner{
         }
 
         Course[] newCourses = new Course[MAX_COURSES];
-
         /*
         Stores all the Courses that are less than the given position into the new array.
          */
         System.arraycopy(courses, 0, newCourses, 0, position - 1);
-
         /*
         Stores all the Courses that are originally greater than or equal to the given position
         into the new array their original position increase by 1.
@@ -328,10 +326,7 @@ public class Planner{
      * 		The index of the desired Course if the Course exist, -1 otherwise.
      *
      */
-    public int index(Course course) {
-
-        return Arrays.asList(courses).indexOf(course);
-    }
+    public int index(Course course) { return Arrays.asList(courses).indexOf(course); }
 
 
     /**
