@@ -5,7 +5,6 @@
  * the clone() method.
  *
  * @author Zhen Wei Liao
- * 		Date: 9/6/22
  */
 
 public class Course{
