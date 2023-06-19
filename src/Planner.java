@@ -7,7 +7,6 @@ import java.util.Arrays;
  * ordered list. Moreover, the Planner class could only record a maximum of 50 courses.
  *
  * @author Zhen Wei Liao
- * 		Date: 9/6/22
  */
 public class Planner{
     public static final int MAX_COURSES = 50;
