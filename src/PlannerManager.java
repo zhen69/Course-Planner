@@ -10,6 +10,7 @@ public class PlannerManager {
 
     private static Planner planner, backupPlanner;
     private static Scanner input;
+    private static boolean run;
 
     /**
      * Checks if the user enter an integer or not.
@@ -39,9 +40,26 @@ public class PlannerManager {
      * @return
      *      User input.
      */
-    public static String userInput(String prompt){
+    private static String userInput(String prompt){
         System.out.print(prompt);
         return input.nextLine();
+    }
+
+    /**
+     * Creates a Course based on user input.
+     *
+     * @return
+     *      A new course based on user input.
+     */
+    private static Course createCourse() throws NegativeValueException {
+        Course course = new Course();
+        course.setName(userInput("Enter course name: "));
+        course.setDepartment(userInput("Enter department: "));
+        course.setCode(isInteger(userInput("Enter course code: ")));
+        course.setSection((byte) isInteger(userInput("Enter course section: ")));
+        course.setInstructor(userInput("Enter instructor: "));
+
+        return course;
     }
 
     /**
@@ -52,21 +70,10 @@ public class PlannerManager {
      */
     private static void addOrLook(String choice) throws NegativeValueException, IllegalArgumentException, FullPlannerException {
 
-        Course course = new Course();
-
-        course.setName(userInput("Enter course name: "));
-
-        course.setDepartment(userInput("Enter department: "));
-
-        course.setCode(isInteger(userInput("Enter course code: ")));
-
-        course.setSection((byte) isInteger(userInput("Enter course section: ")));
-
-        course.setInstructor(userInput("Enter instructor: "));
+        Course course = createCourse();
 
         if(choice.equals("A")) {
             int position = isInteger(userInput("Enter position: "));
-
             planner.addCourse(course, position);
             System.out.println(planner.getCourse(position) + " successfully added to planner.");
         }
@@ -76,7 +83,6 @@ public class PlannerManager {
             else
                 System.out.println("Course not found.");
         }
-
     }
 
     /**
@@ -91,6 +97,66 @@ public class PlannerManager {
         System.out.println(removedCourse + " has been successfully removed from the planner.");
     }
 
+    /**
+     * Creates a backup of the current planner by storing a copy of it.
+     */
+    private static void backup(){
+        backupPlanner = planner.makeCopy();
+        System.out.println("Created a backup of the current planner.");
+    }
+
+    /**
+     * Prints the backup planner.
+     */
+    private static void printBackup(){
+        if (backupPlanner != null)
+            System.out.println(backupPlanner);
+        else
+            System.out.println("No record of backup.");
+    }
+
+    /**
+     * Replaces the current Planner with the backup Planner.
+     */
+    private static void revertBackup(){
+        if (backupPlanner != null) {
+            planner = backupPlanner;
+            System.out.println("Planner successfully reverted to the backup copy.");
+        } else
+            System.out.println("No record of backup.......Planner unmodified.");
+    }
+
+    /**
+     * Ends the program.
+     */
+    private static void terminate(){
+        System.out.println("Program terminating successfully...");
+        run = false;
+        input.close();
+    }
+
+    /**
+     * Enable user input and perform operations based on the input command.
+     *
+     */
+    private static void commands() throws NegativeValueException, FullPlannerException {
+        String choice = input.nextLine();
+        switch (choice.toUpperCase().trim()) {
+            case "A" -> addOrLook("A");
+            case "G" -> planner.printCourse(planner.getCourse(isInteger(userInput("Enter position: "))));
+            case "R" -> removeCourse();
+            case "P" -> planner.printAllCourses();
+            case "F" -> Planner.filter(planner, userInput("Enter department: "));
+            case "L" -> addOrLook("L");
+            case "S" -> System.out.println("There are " + planner.size() + " courses in the planner.");
+            case "B" -> backup();
+            case "PB" -> printBackup();
+            case "RB" -> revertBackup();
+            case "Q" -> terminate();
+            default -> System.out.println("Please enter only the listed choices.");
+        }
+    }
+
 
     /**
      * The main method runs a menu-driven application which first creates
@@ -103,9 +169,9 @@ public class PlannerManager {
     public static void main(String[] args) {
         planner = new Planner();
         input = new Scanner(System.in);
-        boolean quit = false;
+        run = true;
 
-        while(!quit) {
+        while(run) {
             System.out.println("""
                     (A) Add Course
                     (G) Get Course
@@ -120,40 +186,8 @@ public class PlannerManager {
                     (Q) Quit
                     """);
             System.out.print("Enter a selection: ");
-            String choice = input.nextLine();
             try {
-                switch (choice.toUpperCase().trim()) {
-                    case "A" -> addOrLook("A");
-                    case "G" -> planner.printCourse(planner.getCourse(isInteger(userInput("Enter position: "))));
-                    case "R" -> removeCourse();
-                    case "P" -> planner.printAllCourses();
-                    case "F" -> Planner.filter(planner, userInput("Enter department: "));
-                    case "L" -> addOrLook("L");
-                    case "S" -> System.out.println("There are " + planner.size() + " courses in the planner.");
-                    case "B" -> {
-                        backupPlanner = planner.makeCopy();
-                        System.out.println("Created a backup of the current planner.");
-                    }
-                    case "PB" -> {
-                        if (backupPlanner != null)
-                            System.out.println(backupPlanner);
-                        else
-                            System.out.println("No record of backup.");
-                    }
-                    case "RB" -> {
-                        if (backupPlanner != null) {
-                            planner = backupPlanner;
-                            System.out.println("Planner successfully reverted to the backup copy.");
-                        } else
-                            System.out.println("No record of backup.......Planner unmodified.");
-                    }
-                    case "Q" -> {
-                        System.out.println("Program terminating successfully...");
-                        quit = true;
-                        input.close();
-                    }
-                    default -> System.out.println("Please enter only the listed choices.");
-                }
+                commands();
             } catch(IllegalArgumentException | FullPlannerException | NegativeValueException e) {
                 System.out.println(e);
             }
