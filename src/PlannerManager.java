@@ -1,8 +1,7 @@
 /**
- * The PlannerManager class allows user to enter commands to perform specific operations on the Planner
+ * The PlannerManager class allows the user to enter commands to perform specific operations on the Planner
  *
  * @author Zhen Wei Liao
- * 		Date: 9/6/22
  *
  */
 import java.util.Scanner;
