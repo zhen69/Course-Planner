@@ -1,8 +1,7 @@
 /**
- * The FullPlannerException class inherit all properties and behaviors from the Exception class.
+ * The FullPlannerException class inherits all properties and behaviors from the Exception class.
  *
  * @author Zhen Wei Liao
- * 		Date: 9/6/22
  */
 
 public class FullPlannerException extends Exception{
