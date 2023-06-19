@@ -1,9 +1,8 @@
 /**
- * The NegativeValueException class inherit all properties and behaviors from the Exception class.
+ * The NegativeValueException class inherits all properties and behaviors from the Exception class.
  *
  *
  * @author Zhen Wei Liao
- * 		Date: 9/6/22
  **/
 public class NegativeValueException extends Exception{
     /**
@@ -18,7 +17,7 @@ public class NegativeValueException extends Exception{
      * to the given error variable.
      *
      * @param error
-     * 		message to display when this exception is throw
+     * 		Message to display when this exception is thrown
      */
     public NegativeValueException(String error) {
         super(error);
