@@ -12,24 +12,6 @@ public class PlannerManager {
     private static Scanner input;
     private static boolean run;
 
-    /**
-     * Checks if the user enter an integer or not.
-     *
-     * @param input
-     * 		User input.
-     *
-     * @throws IllegalArgumentException
-     * 		when the user input is not a number
-     *
-     * @return
-     * 		User input but as a double.
-     * */
-    public static int isInteger(String input) throws IllegalArgumentException {
-        if(!(input != null && input.matches("-?\\d+")))
-            throw new IllegalArgumentException("Invalid input. Please only enter a number.\n");
-        else
-            return Integer.parseInt(input);
-    }
 
     /**
      * Prints the given prompt and return user input.
@@ -55,8 +37,8 @@ public class PlannerManager {
         Course course = new Course();
         course.setName(userInput("Enter course name: "));
         course.setDepartment(userInput("Enter department: "));
-        course.setCode(isInteger(userInput("Enter course code: ")));
-        course.setSection((byte) isInteger(userInput("Enter course section: ")));
+        course.setCode(Integer.parseInt(userInput("Enter course code: ")));
+        course.setSection((byte) Integer.parseInt(userInput("Enter course section: ")));
         course.setInstructor(userInput("Enter instructor: "));
 
         return course;
@@ -73,7 +55,7 @@ public class PlannerManager {
         Course course = createCourse();
 
         if(choice.equals("A")) {
-            int position = isInteger(userInput("Enter position: "));
+            int position = Integer.parseInt(userInput("Enter position: "));
             planner.addCourse(course, position);
             System.out.println(planner.getCourse(position) + " successfully added to planner.");
         }
@@ -143,7 +125,7 @@ public class PlannerManager {
         String choice = input.nextLine();
         switch (choice.toUpperCase().trim()) {
             case "A" -> addOrLook("A");
-            case "G" -> planner.printCourse(planner.getCourse(isInteger(userInput("Enter position: "))));
+            case "G" -> planner.printCourse(planner.getCourse(Integer.parseInt(userInput("Enter position: "))));
             case "R" -> removeCourse();
             case "P" -> planner.printAllCourses();
             case "F" -> Planner.filter(planner, userInput("Enter department: "));
@@ -188,7 +170,10 @@ public class PlannerManager {
             System.out.print("Enter a selection: ");
             try {
                 commands();
-            } catch(IllegalArgumentException | FullPlannerException | NegativeValueException e) {
+            } catch(NumberFormatException e){
+                System.out.println("Invalid input. Please enter a integer.");
+            }
+            catch(IllegalArgumentException | FullPlannerException | NegativeValueException e) {
                 System.out.println(e);
             }
             System.out.println();
