@@ -388,6 +388,7 @@ public class Planner{
      * 		The String representation of this Planner object.
      *
      * */
+    @Override
     public String toString() {
         StringBuilder table = new StringBuilder(header());
 
@@ -411,6 +412,7 @@ public class Planner{
      * 		This method would always return false if obj is not a Planner object.
      *
      * */
+    @Override
     public boolean equals(Object obj) {
         if(obj == this) return true;
         if(!(obj instanceof Planner)) return false;
