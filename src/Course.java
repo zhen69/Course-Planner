@@ -195,5 +195,4 @@ public class Course{
     public String toString() {
         return department + " " + code + (section < 10 ? ".0" : ".") + section;
     }
-
 }
