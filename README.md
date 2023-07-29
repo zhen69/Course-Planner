@@ -5,4 +5,4 @@ Language Used: Java.
 
 Concepts: Object-Oriented Programming and Data Structures (Array).
 
-Restrictions: Despite the Scanner class, no API classes are allowed.
+Restrictions: No API classes are allowed despite the Scanner and Array classes.
