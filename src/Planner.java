@@ -14,14 +14,14 @@ public class Planner{
     private int numOfCourses = 0;
 
     /**
-     * Constructor create a Planner object with no Course in it.
+     * Constructor creates a Planner object with no Course in it.
      *
      */
     public Planner() {
     }
 
     /**
-     * Constructor create a Planner object using the given attributes.
+     * Constructor creates a Planner object using the given attributes.
      *
      * @param courses
      *      Array of Course objects.
@@ -30,7 +30,7 @@ public class Planner{
      *      Number of courses in the array.
      *
      * @throws IllegalArgumentException
-     *      when number of courses exceeds MAX_COURSES.
+     *      when number of courses exceed MAX_COURSES.
      */
     public Planner(Course[] courses, int numOfCourses) throws IllegalArgumentException{
         if(courses.length > MAX_COURSES)
@@ -93,13 +93,13 @@ public class Planner{
      * <p>
      * Preconditions:
      * 		The Course object has been instantiated.
-     * 		Position is within the range 1 <= position <= items_currently_in_list + 1.
+     * 		Position is within range 1 <= position <= items_currently_in_list + 1.
      * 		The number of Course Objects in the Planner is less than MAX_COURSES.
      * <p>
      * Post conditions:
      * 		After adding the new Course to the list on its given position,
      * 		all the courses that are originally greater than or equal to the
-     * 		given position are moved back one position.
+     * 		given position are moved one unit back.
      *
      * @throws IllegalArgumentException
      * 		when enter a position that is not within the valid range
@@ -166,7 +166,7 @@ public class Planner{
      * <p>
      * Preconditions:
      * 		The Planner object has been instantiated.
-     * 		Position is within the range 1 <= position <= items_currently_in_list.
+     * 		Position is within range 1 <= position <= items_currently_in_list.
      * <p>
      * Post conditions:
      * 		After removing the Course at the given position,
@@ -214,11 +214,11 @@ public class Planner{
      * Returns a specific Course in the list.
      *
      * @param position
-     * 		The position of the Course in the list that the user want to access.
+     * 		The position of the Course in the list that the user wants to access.
      * <p>
      * Preconditions:
      * 		The Planner object has been instantiated.
-     * 		Position is within the range 1 <= position <= items_currently_in_list.
+     * 		Position is within range 1 <= position <= items_currently_in_list.
      *
      * @throws IllegalArgumentException
      * 		when enter a position that is not within the valid range.
@@ -306,7 +306,7 @@ public class Planner{
      * 		The Course the user is looking for.
      * <p>
      * Preconditions:
-     * 		This Planner and Course has both been instantiated.
+     * 		This Planner and Course have both been instantiated.
      *
      * @return
      * 		True if the Course is in the Planner, false otherwise.

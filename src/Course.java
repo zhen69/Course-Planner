@@ -24,19 +24,19 @@ public class Course{
      * Constructor used to create a new Course object with specific attributes.
      *
      *  @param name
-     *  	The name of the course.
+     *  	The course name.
      *
      *  @param department
-     *  	The department of the course.
+     *  	The course department.
      *
      *  @param code
-     *  	The code of the course.
+     *  	The course code.
      *
      *  @param section
-     *  	The section of the course.
+     *  	The course section.
      *
      *  @param instructor
-     *  	THe instructor that's teaching the course.
+     *  	The course instructor.
      */
     public Course(String name, String department, int code, byte section, String instructor){
         this.name = name;
@@ -50,7 +50,7 @@ public class Course{
      * Accessor. Returns the name of the course.
      *
      * @return
-     * 		The name of the course.
+     * 		The course name.
      */
     public String getName() {
         return this.name;
@@ -60,7 +60,7 @@ public class Course{
      * Accessor. Returns the department of the course.
      *
      * @return
-     * 		The department of the course.
+     * 		The course department.
      */
     public String getDepartment() {
         return this.department;
@@ -70,7 +70,7 @@ public class Course{
      * Accessor. Returns the code of the course.
      *
      * @return
-     * 		The code of the course.
+     * 		The course code.
      */
     public int getCode() {
         return this.code;
@@ -100,7 +100,7 @@ public class Course{
      * Modifier. Modifies the name of the course.
      *
      * @param name
-     * 		The name of the course.
+     * 		The course name.
      */
     public void setName(String name) {
         this.name = name;
@@ -110,7 +110,7 @@ public class Course{
      * Modifier. Modifies the department of the course.
      *
      * @param department
-     * 		The department of the course.
+     * 		The course department.
      */
     public void setDepartment(String department) {
         this.department = department;
@@ -120,7 +120,7 @@ public class Course{
      * Modifier. Modifies the code of the course.
      *
      * @param code
-     * 		The code of the course.
+     * 		The course code.
      *
      * @throws NegativeValueException
      * 		when the code is set to a negative number.
@@ -159,7 +159,7 @@ public class Course{
     }
 
     /**
-     * Determine if two Course objects contains the same information.
+     * Determine if two Course objects contain the same information.
      *
      * @param obj
      * 		The object that is being used to compare with the current Course object.

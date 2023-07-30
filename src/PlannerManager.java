@@ -144,7 +144,7 @@ public class PlannerManager {
      * The main method runs a menu-driven application which first creates
      * an empty Planner object. The program prompts the user for a command
      * to execute an operation. Once a command has been chosen, the program
-     * may ask the user for additional information if necessary, and performs
+     * may ask the user for additional information if necessary, and perform
      * the operation
      *
      */
@@ -174,7 +174,7 @@ public class PlannerManager {
                 System.out.println("Invalid input. Please enter a integer.");
             }
             catch(IllegalArgumentException | FullPlannerException | NegativeValueException e) {
-                System.out.println(e);
+                System.out.println(e.getMessage());
             }
             System.out.println();
         }
