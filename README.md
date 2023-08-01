@@ -33,6 +33,7 @@ Run directly in IDEs
 Or
 <br>
 Do the following in the terminal (the following example is run in the Windows PowerShell):
+<br><br>
 <ol>
   <li>Check if Java is installed on your computer</li>
   <code>C:\Users\anon> java -version</code>
