@@ -12,12 +12,12 @@ Students often face the situation of creating their course schedule for the next
   <li>Create backup planners.</li>
 </ul>
 
-##Get Started
-###Dependencies
+<h2>Get Started</h2>
+<h3>Dependencies</h3>
 <ul>
   <li><a href="https://www.oracle.com/java/technologies/downloads/">Java JDK 15 or Higher</a></li>
   <li>Text Editor or IDEs.</li>
-  ####Recommend:
+  <h4>Recommend:</h4>
   <ul>
     <li>Notepad (Worst Case).</li>
     <li><a href="https://www.eclipse.org/downloads/">Eclipse</a></li>
@@ -27,7 +27,7 @@ Students often face the situation of creating their course schedule for the next
   </ul>
 </ul>
 
-###Executing program
+<h3>Executing program</h3>
 Run directly in IDEs
 Or
 Do the following in the terminal (the following example is run in the Windows PowerShell):
