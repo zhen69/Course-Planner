@@ -29,38 +29,36 @@ Students often face the situation of creating their course schedule for the next
 
 <h3>Executing program</h3>
 Run directly in IDEs
+<br>
 Or
+<br>
 Do the following in the terminal (the following example is run in the Windows PowerShell):
 <ol>
   <li>Check if Java is installed on your computer</li>
-  ```
-  C:\Users\anon> java -version
-  ```
+  <code>C:\Users\anon> java -version</code>
+  <br>
   If installed, it should display the Java version. 
-  If a error is presented, download Java from <a href="https://www.oracle.com/java/technologies/downloads/">Orcale</a>
-  
+  If an error is presented, download Java from <a href="https://www.oracle.com/java/technologies/downloads/">Orcale</a>.
+  <br><br>
   <li>Check if you can access the Java compiler</li>
-  ```
-  C:\Users\anon> javac
-  ```
+  <code>C:\Users\anon> javac</code>
+  <br>
   It should display some information about the compiler.
-  If not, Follow the steps on <a href="http://www.skylit.com/javamethods/faqs/javaindos.html">this site</a>
-  
+  If not, Follow the steps on <a href="http://www.skylit.com/javamethods/faqs/javaindos.html">this site</a>.
+  <br><br>
   <li>Change the directory to the one that contains your Java files. Let's call this directory "JavaProgram"</li>
-  ```
-  C:\Users\anon> cd JavaProgram
-  C:\Users\anon\JavaProgram>
-  ```
-  
+  <code>C:\Users\anon> cd JavaProgram</code> => <code>C:\Users\anon\JavaProgram></code>
+  <br><br>
   <li>Compile the file you want to execute. Let's call this file "RunMe.java"</li>
-  ```
-  C:\Users\anon\JavaProgram> javac RunMe.java
-  ```
+  <code>C:\Users\anon\JavaProgram> javac RunMe.java</code>
+  <br>
   This will create the class file "RunMe.class"
-
+  <br><br>
   <li>Run the program</li>
-  ```
-  C:\Users\anon\JavaProgram> java RunMe.java
-  ```
+  <code>C:\Users\anon\JavaProgram> java RunMe.java</code>
 </ol>
 
+<h2>Author</h2>
+<strong>Zhen Wei Liao</strong> - <a href="www.linkedin.com/in/zhenwei-liao-148baa273">@Zhen</a>
+<h2>License</h2>
+This project is under the MIT License. <br>Please check the LICENSE.md file for more information.
