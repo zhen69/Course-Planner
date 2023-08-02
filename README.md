@@ -27,6 +27,9 @@ Students often face the situation of creating their course schedule for the next
   </ul>
 </ul>
 
+<h3>Installing</h3>
+Visit the src directory to see all the required Java files. To run the program, individuals must download those files and put them in the same directory.
+
 <h3>Executing program</h3>
 Run directly in IDEs
 <br>
@@ -53,7 +56,7 @@ Do the following in the terminal (the following example is run in the Windows Po
   <li>Compile the file you want to execute. Let's call this file "RunMe.java"</li>
   <code>C:\Users\anon\JavaProgram> javac RunMe.java</code>
   <br>
-  This will create the class file "RunMe.class"
+  This will create the class file "RunMe.class."
   <br><br>
   <li>Run the program</li>
   <code>C:\Users\anon\JavaProgram> java RunMe.java</code>
