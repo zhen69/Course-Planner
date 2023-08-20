@@ -1,5 +1,6 @@
 /**
  * The NegativeValueException class inherits all properties and behaviors of the Exception class.
+ * This exception is thrown when a positive integer is expected but receives a negative input.
  *
  *
  * @author Zhen Wei Liao
