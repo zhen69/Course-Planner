@@ -1,5 +1,6 @@
 /**
  * The FullPlannerException class inherits all properties and behaviors of the Exception class.
+ * This exception is thrown when the planner reaches the maximum courses.
  *
  * @author Zhen Wei Liao
  */
